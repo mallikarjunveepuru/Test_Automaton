@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XmltoJava name="Selenium_Automation">
+	<suite suitename="Edutech" classname="Edutech">
+		<parameter name="Edutech" testcase="title"/>
+		<parameter name="Edutech" testcase="login"/>	
+	</suite>
+</XmltoJava>
+
+
+
+
+

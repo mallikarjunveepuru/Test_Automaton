@@ -1,0 +1,31 @@
+<project name="selenium">
+    <property name="src-dir" location="src"/>
+    <property name="build-dir" location="bin"/>
+    <property name="classes-dir" value="${build-dir}"/>
+    <property name="dist-dir" location="dist"/>
+    <property name="lib-dir" value="lib"/>
+    <property name="jar-dir" value="${build-dir}/jar"/>
+    <property name="main-class" value="bluemeric.Suite"/>
+
+	<target name="clean">
+	                <delete dir="bin"/>
+	 </target>
+	<target name="compile" depends="clean">
+	                <mkdir dir="bin"/>
+	                <javac srcdir="src" destdir="bin" classpathref="classes" />
+	  </target>
+
+	<path id="classes">
+	                <fileset dir="lib">
+	                        <include name="**/*.jar" />
+	                </fileset>
+	        </path>
+	<target name="runTest" depends="compile">
+	                        <java classname="bluemeric.Suite" fork="true">
+	                                <classpath>
+	                                        <pathelement location="bin" />
+	                                        <path refid="classes" />
+	                                </classpath>
+	                        </java>
+	                </target>    
+	</project>
